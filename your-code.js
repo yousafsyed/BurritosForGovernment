@@ -14,7 +14,7 @@ angular.module('jsCodingTest').controller('GiveTheGovernmentABurrito', function(
 angular.module('jsCodingTest').service('Utest', function() {
     return {
         run: function(data) {
-           console.log(data);
+           // console.log(data);
             QUnit.test('Data is object', function(assert) {
                 assert.ok(typeof data == "object", "Passed!");
             });

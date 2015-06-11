@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//code.jquery.com/qunit/qunit-1.18.0.css">
+    </head>
+    <body ng-app="jsCodingTest">
+        <main ng-controller="GiveTheGovernmentABurrito">
+        <h2>Following packages are availabes for Parliment</h2>
+
+        <div class="row" ng-repeat="package in response.packages">
+            <div class="col-md-2">
+                <b>Package Name:</b>{{package.name}}<br>
+                <b>Vendor Name:</b> {{package.vendor.name}}<br>
+                <b>Vendor url:</b>  {{package.vendor.url}}<br>
+                <b>Type:</b> {{package.vendor.businessType.name}}<br>
+                <b>City:</b> {{package.vendor.addresses[0].city}}<br>
+            </div>
+            <div class="col-md-2">
+
+                <b>Delivery Days are:</b>
+                <ul>
+                    <li ng-repeat="delivery_days in package.deliveryDays">
+                        {{delivery_days}},
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <b>Package Images:</b>
+                <div ng-repeat="package_images in package.images">
+                    <img src="{{package_images.thumbnail}}" alt="Description"/>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <b>Event Types</b>
+                <div ng-repeat="event_types in package.eventTypes">
+                    {{event_types.name}}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    </main>
+<div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib-integration.js"></script>
+    <script src="node_modules/citypantry-js-lib/dist/lib-es5-with-browser-polyfill.js"></script>
+    <script src="//code.jquery.com/qunit/qunit-1.18.0.js"></script>
+    <script src="your-code.js"></script>
+    
+
+</body>
+</html>

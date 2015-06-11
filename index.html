@@ -3,12 +3,22 @@
         <!-- Latest compiled and minified CSS -->
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <link rel="stylesheet" href="//code.jquery.com/qunit/qunit-1.18.0.css">
+        <style type="text/css">
+        .package{
+        border: 1px solid #C9C9C9;
+        padding: 10px;
+        margin: 10px;
+        }
+        body{
+            padding: 100px;
+        }
+        </style>
     </head>
     <body ng-app="jsCodingTest">
         <main ng-controller="GiveTheGovernmentABurrito">
         <h2>Following packages are available for Parliment</h2>
 
-        <div class="row" ng-repeat="package in response.packages">
+        <div class="row package" ng-repeat="package in response.packages">
             <div class="col-md-2">
                 <b>Package Name:</b>{{package.name}}<br>
                 <b>Vendor Name:</b> {{package.vendor.name}}<br>

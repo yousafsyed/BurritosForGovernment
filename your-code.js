@@ -1,5 +1,5 @@
 angular.module('jsCodingTest', ["cpLib"]);
-angular.module('jsCodingTest').controller('GiveTheGovernmentABurrito', function($scope, $http, PackagesFactory,Utest) {
+angular.module('jsCodingTest').controller('GiveTheGovernmentABurrito', function($scope, $http, PackagesFactory,UtestService) {
     $scope.response = ""
     // Your JavaScript goes here.
     // Your code should use our JS library's `PackagesFactory.searchPackages` method to search
@@ -8,10 +8,10 @@ angular.module('jsCodingTest').controller('GiveTheGovernmentABurrito', function(
     // https://api.citypantry.com/packages/search?name=Burrito&postcode=SW1A%200AA
     PackagesFactory.searchPackages('Burritos', 'SW1A 0AA').success(function(data) {
         $scope.response = data;
-        Utest.run(data);
+        UtestService.run(data);
     });
 });
-angular.module('jsCodingTest').service('Utest', function() {
+angular.module('jsCodingTest').service('UtestService', function() {
     return {
         run: function(data) {
            // console.log(data);
